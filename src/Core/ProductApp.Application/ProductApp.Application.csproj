@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk" ToolsVersion="15.0">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -15,6 +15,15 @@
     <None Remove="Interfaces\Repository\" />
     <None Remove="Parameters\" />
     <None Remove="Extensions\" />
+    <None Remove="Features\" />
+    <None Remove="Features\Commands\" />
+    <None Remove="Features\Queries\" />
+    <None Remove="Features\Queries\GetAllProducts\" />
+    <None Remove="MediatR" />
+    <None Remove="MediatR.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="AutoMapper" />
+    <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
+    <None Remove="Features\Commands\CreateProductCommand\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dto\" />
@@ -25,8 +34,19 @@
     <Folder Include="Interfaces\Repository\" />
     <Folder Include="Parameters\" />
     <Folder Include="Extensions\" />
+    <Folder Include="Features\" />
+    <Folder Include="Features\Commands\" />
+    <Folder Include="Features\Queries\" />
+    <Folder Include="Features\Queries\GetAllProducts\" />
+    <Folder Include="Features\Commands\CreateProduct\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProductApp.Domain\ProductApp.Domain.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="MediatR" Version="10.0.1" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="10.0.1" />
+    <PackageReference Include="AutoMapper" Version="11.0.1" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
   </ItemGroup>
 </Project>
