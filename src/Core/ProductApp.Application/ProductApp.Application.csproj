@@ -14,6 +14,7 @@
     <None Remove="Interfaces\" />
     <None Remove="Interfaces\Repository\" />
     <None Remove="Parameters\" />
+    <None Remove="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dto\" />
@@ -23,6 +24,7 @@
     <Folder Include="Interfaces\" />
     <Folder Include="Interfaces\Repository\" />
     <Folder Include="Parameters\" />
+    <Folder Include="Extensions\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProductApp.Domain\ProductApp.Domain.csproj" />
