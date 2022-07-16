@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 25.0.1700.6
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{12013749-B49F-47C9-9927-3335856F923C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{4069E358-4231-45FE-AE33-1F2925935EBC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApp.Domain", "src\Core\ProductApp.Domain\ProductApp.Domain.csproj", "{49079F74-E986-479E-8957-32D1178E306F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProductApp.Application", "src\Core\ProductApp.Application\ProductApp.Application.csproj", "{8EBC6043-2C2B-4230-BE49-5CA18EDD54EC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{49079F74-E986-479E-8957-32D1178E306F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{49079F74-E986-479E-8957-32D1178E306F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{49079F74-E986-479E-8957-32D1178E306F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{49079F74-E986-479E-8957-32D1178E306F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EBC6043-2C2B-4230-BE49-5CA18EDD54EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EBC6043-2C2B-4230-BE49-5CA18EDD54EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EBC6043-2C2B-4230-BE49-5CA18EDD54EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EBC6043-2C2B-4230-BE49-5CA18EDD54EC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2BD5CED2-821F-4A98-B352-6E53005F3F89}
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{4069E358-4231-45FE-AE33-1F2925935EBC} = {12013749-B49F-47C9-9927-3335856F923C}
+		{49079F74-E986-479E-8957-32D1178E306F} = {4069E358-4231-45FE-AE33-1F2925935EBC}
+		{8EBC6043-2C2B-4230-BE49-5CA18EDD54EC} = {4069E358-4231-45FE-AE33-1F2925935EBC}
+	EndGlobalSection
+EndGlobal
