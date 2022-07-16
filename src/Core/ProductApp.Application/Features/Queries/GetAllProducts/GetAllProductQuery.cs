@@ -3,13 +3,14 @@ using AutoMapper;
 using MediatR;
 using ProductApp.Application.Dto;
 using ProductApp.Application.Interfaces.Repository;
+using ProductApp.Application.Wrappers;
 
 namespace ProductApp.Application.Features.Queries.GetAllProducts
 {
-    public class GetAllProductQuery : IRequest<List<ProductViewDto>>
+    public class GetAllProductQuery : IRequest<ServiceResponse<List<ProductViewDto>>>
     {
 
-        public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQuery, List<ProductViewDto>>
+        public class GetAllProductQueryHandler : IRequestHandler<GetAllProductQuery, ServiceResponse<List<ProductViewDto>>>
         {
             private readonly IProductRepository _productRepository;
             private readonly IMapper Mapper;
@@ -19,11 +20,11 @@ namespace ProductApp.Application.Features.Queries.GetAllProducts
                 Mapper = mapper;
             }
 
-            public async Task<List<ProductViewDto>> Handle(GetAllProductQuery request, CancellationToken cancellationToken)
+            public async Task<ServiceResponse<List<ProductViewDto>>> Handle(GetAllProductQuery request, CancellationToken cancellationToken)
             {
                 var products = await _productRepository.GetAllAsync();
                 var viewModels = Mapper.Map<List<ProductViewDto>>(products);
-                return viewModels;
+                return new ServiceResponse<List<ProductViewDto>>(viewModels);
             }
         }
     }
