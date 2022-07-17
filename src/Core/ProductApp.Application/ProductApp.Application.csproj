@@ -24,6 +24,7 @@
     <None Remove="AutoMapper" />
     <None Remove="AutoMapper.Extensions.Microsoft.DependencyInjection" />
     <None Remove="Features\Commands\CreateProductCommand\" />
+    <None Remove="Features\Queries\GetProductById\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Dto\" />
@@ -39,6 +40,7 @@
     <Folder Include="Features\Queries\" />
     <Folder Include="Features\Queries\GetAllProducts\" />
     <Folder Include="Features\Commands\CreateProduct\" />
+    <Folder Include="Features\Queries\GetProductById\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ProductApp.Domain\ProductApp.Domain.csproj" />

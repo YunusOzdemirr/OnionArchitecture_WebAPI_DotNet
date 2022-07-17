@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using ProductApp.Application.Dto;
 using ProductApp.Application.Features.Commands.CreateProduct;
 using ProductApp.Application.Features.Queries.GetAllProducts;
+using ProductApp.Application.Features.Queries.GetProductById;
 using ProductApp.Application.Interfaces.Repository;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
@@ -34,6 +35,11 @@ namespace ProdcutApp.API.Controllers
         public async Task<IActionResult> Create(CreateProductCommand command)
         {
             return Ok(await Mediator.Send(command));
+        }
+        [HttpGet("[action]")]
+        public async Task<IActionResult> GetById(GetProductByIdQuery query)
+        {
+            return Ok(await Mediator.Send(query));
         }
 
     }
