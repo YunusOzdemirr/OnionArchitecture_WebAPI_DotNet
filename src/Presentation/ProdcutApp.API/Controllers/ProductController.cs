@@ -37,8 +37,9 @@ namespace ProdcutApp.API.Controllers
             return Ok(await Mediator.Send(command));
         }
         [HttpGet("[action]")]
-        public async Task<IActionResult> GetById(GetProductByIdQuery query)
+        public async Task<IActionResult> GetById(int id)
         {
+            var query = new GetProductByIdQuery { Id = id };
             return Ok(await Mediator.Send(query));
         }
 
