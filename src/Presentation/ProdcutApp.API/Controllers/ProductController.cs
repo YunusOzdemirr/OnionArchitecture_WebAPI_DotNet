@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ProductApp.Application.Dto;
+using ProductApp.Application.Features.Commands.CreateProduct;
 using ProductApp.Application.Features.Queries.GetAllProducts;
 using ProductApp.Application.Interfaces.Repository;
 
@@ -27,7 +28,12 @@ namespace ProdcutApp.API.Controllers
         public async Task<IActionResult> GetAll()
         {
             var query = new GetAllProductQuery();
-            return Ok(Mediator.Send(query));
+            return Ok(await Mediator.Send(query));
+        }
+        [HttpPost("[action]")]
+        public async Task<IActionResult> Create(CreateProductCommand command)
+        {
+            return Ok(await Mediator.Send(command));
         }
 
     }
