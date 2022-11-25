@@ -1,11 +1,7 @@
-﻿using System;
-using ProductApp.Domain.Entities;
+﻿using ProductApp.Domain.Entities;
 
-namespace ProductApp.Application.Interfaces.Repository
+namespace ProductApp.Application.Interfaces.Repository;
+
+public interface IProductRepository : IGenericRepository<Product>
 {
-    public interface IProductRepository:IGenericRepository<Product>
-    {
-      
-    }
 }
-

@@ -1,18 +1,15 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using ProductApp.Application.Dto;
 using ProductApp.Application.Features.Commands.CreateProduct;
 using ProductApp.Domain.Entities;
 
-namespace ProductApp.Application.Mapping
+namespace ProductApp.Application.Mapping;
+
+public class GeneralMapping : Profile
 {
-    public class GeneralMapping:Profile
+    public GeneralMapping()
     {
-        public GeneralMapping()
-        {
-            CreateMap<Product, ProductViewDto>().ReverseMap();
-            CreateMap<CreateProductCommand, Product>().ReverseMap();
-        }
+        CreateMap<Product, ProductViewDto>().ReverseMap();
+        CreateMap<CreateProductCommand, Product>().ReverseMap();
     }
 }
-

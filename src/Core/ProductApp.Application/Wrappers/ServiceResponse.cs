@@ -1,17 +1,15 @@
-﻿using System;
-namespace ProductApp.Application.Wrappers
+﻿namespace ProductApp.Application.Wrappers;
+
+public class ServiceResponse<T>
 {
-    public class ServiceResponse<T>
+    public ServiceResponse(T value)
     {
-        public T Value { get; set; }
-        public ServiceResponse(T value)
-        {
-            Value = value;
-        }
-        public ServiceResponse()
-        {
-
-        }
+        Value = value;
     }
-}
 
+    public ServiceResponse()
+    {
+    }
+
+    public T Value { get; set; }
+}

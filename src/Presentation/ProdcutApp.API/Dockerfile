@@ -1,0 +1,23 @@
+﻿FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS base
+WORKDIR /app
+EXPOSE 80
+EXPOSE 443
+
+FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
+WORKDIR /src
+COPY ["src/Presentation/ProdcutApp.API/ProdcutApp.API.csproj", "ProdcutApp.API/"]
+COPY ["src/Core/ProductApp.Application/ProductApp.Application.csproj", "ProductApp.Application/"]
+COPY ["src/Core/ProductApp.Domain/ProductApp.Domain.csproj", "ProductApp.Domain/"]
+COPY ["src/Infrastructure/ProductApp.Persistence/ProductApp.Persistence.csproj", "ProductApp.Persistence/"]
+RUN dotnet restore "/src/Presentation/ProdcutApp.API/ProdcutApp.API.csproj"
+COPY . .
+WORKDIR "/src/ProdcutApp.API"
+RUN dotnet build "ProdcutApp.API.csproj" -c Release -o /app/build
+
+FROM build AS publish
+RUN dotnet publish "ProdcutApp.API.csproj" -c Release -o /app/publish
+
+FROM base AS final
+WORKDIR /app
+COPY --from=publish /app/publish .
+ENTRYPOINT ["dotnet", "ProdcutApp.API.dll"]

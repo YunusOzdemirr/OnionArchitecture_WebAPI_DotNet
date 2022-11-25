@@ -1,27 +1,28 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <Nullable>enable</Nullable>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
-  </ItemGroup>
+    <ItemGroup>
+        <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3"/>
+    </ItemGroup>
 
-  <ItemGroup>
-    <None Remove="Controllers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controllers\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\Core\ProductApp.Application\ProductApp.Application.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-    <ProjectReference Include="..\..\Infrastructure\ProductApp.Persistence\ProductApp.Persistence.csproj">
-      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
-    </ProjectReference>
-  </ItemGroup>
+    <ItemGroup>
+        <None Remove="Controllers\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <Folder Include="Controllers\"/>
+    </ItemGroup>
+    <ItemGroup>
+        <ProjectReference Include="..\..\Core\ProductApp.Application\ProductApp.Application.csproj">
+            <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+        </ProjectReference>
+        <ProjectReference Include="..\..\Infrastructure\ProductApp.Persistence\ProductApp.Persistence.csproj">
+            <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+        </ProjectReference>
+    </ItemGroup>
 </Project>
